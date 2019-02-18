@@ -7,6 +7,6 @@ public class P804_UniqueMorseCodeWordsTest {
 
     @Test
     public void uniqueMorseRepresentations() {
-
+        System.out.println("---");
     }
 }
