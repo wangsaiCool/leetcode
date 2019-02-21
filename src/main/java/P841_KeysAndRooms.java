@@ -1,16 +1,39 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * Created by WangSai on 2/20/19
  */
 public class P841_KeysAndRooms {
-    public boolean canVisitAllRooms(List<List<Integer>> rooms) {
+    public boolean canVisitAllRooms_Solution1(List<List<Integer>> rooms) {
         if (rooms.size() <= 1) {
             return true;
         }
         boolean[] hasEntered = new boolean[rooms.size()];
         visitRooms(0, hasEntered, rooms);
+        return checkEnteredRoom(hasEntered);
+    }
+
+    public boolean canVisitAllRooms_Solution2(List<List<Integer>> rooms) {
+        boolean[] seen = new boolean[rooms.size()];
+        seen[0] = true;
+        Stack<Integer> stack = new Stack<Integer>();
+        stack.push(0);
+
+        while (!stack.isEmpty()) {
+            int roomNum = stack.pop();
+            for (int key : rooms.get(roomNum)) {
+                if (!seen[key]) {
+                    seen[key] = true;
+                    stack.push(key);
+                }
+            }
+        }
+        return checkEnteredRoom(seen);
+    }
+
+    private boolean checkEnteredRoom(boolean[] hasEntered) {
         for (boolean result : hasEntered) {
             if (!result) {
                 return false;
@@ -65,6 +88,7 @@ public class P841_KeysAndRooms {
             }
             System.out.println();
         }
-        System.out.println(new P841_KeysAndRooms().canVisitAllRooms(rooms));
+        System.out.println(new P841_KeysAndRooms().canVisitAllRooms_Solution1(rooms));
+        System.out.println(new P841_KeysAndRooms().canVisitAllRooms_Solution2(rooms));
     }
 }
