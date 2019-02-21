@@ -3,6 +3,6 @@
  */
 public class P861_ScoreAfterFlippingMatrix {
     public int matrixScore(int[][] A) {
-
+        return 0;
     }
 }

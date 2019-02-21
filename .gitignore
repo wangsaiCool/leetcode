@@ -1,8 +1,0 @@
-.idea
-target/
-*.iml
-.*
-.gitignore
-.classpath
-.project
-*.orig
