@@ -1,5 +1,3 @@
-import org.apache.commons.lang3.ArrayUtils;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +11,12 @@ public class P841_KeysAndRooms {
         }
         boolean[] hasEntered = new boolean[rooms.size()];
         visitRooms(0, hasEntered, rooms);
-        return !ArrayUtils.contains(hasEntered, false);
+        for (boolean result : hasEntered) {
+            if (!result) {
+                return false;
+            }
+        }
+        return true;
     }
 
     private void visitRooms(int roomNum, boolean[] hasEntered, List<List<Integer>> rooms) {
@@ -23,11 +26,10 @@ public class P841_KeysAndRooms {
         hasEntered[roomNum] = true;
         List<Integer> keys = rooms.get(roomNum);
         for (int i = 0; i < keys.size(); i++) {
-            if (keys.get(i) != -1) {
-
-                System.out.println("keys.size=" + keys.size());
-                visitRooms(keys.get(i), hasEntered, rooms);
+            if (keys.get(i) != -1 && keys.size() > 0) {
+                int key = keys.get(i);
                 keys.set(i, -1);
+                visitRooms(key, hasEntered, rooms);
             }
         }
 
@@ -63,6 +65,6 @@ public class P841_KeysAndRooms {
             }
             System.out.println();
         }
-        new P841_KeysAndRooms().canVisitAllRooms(rooms);
+        System.out.println(new P841_KeysAndRooms().canVisitAllRooms(rooms));
     }
 }
