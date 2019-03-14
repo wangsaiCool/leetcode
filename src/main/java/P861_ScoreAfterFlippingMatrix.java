@@ -3,24 +3,18 @@
  */
 public class P861_ScoreAfterFlippingMatrix {
     public int matrixScore(int[][] A) {
-        return visitMatrix(A, 0, 0, 0);
+        return visitMatrix(A, 0, 0);
     }
 
-    private static int visitMatrix(int[][] A, int rowIndex, int colmIndex, int maxNum) {
+    private static int visitMatrix(int[][] A, int rowIndex, int colmIndex) {
         int sum = calcScore(A);
-        if (sum > maxNum) {
-            maxNum = sum;
-        }
-        if (rowIndex == A.length - 1 && colmIndex == A.length - 1) {
-            return maxNum;
+        if (rowIndex<A.length-1) {
+            sum = visitMatrix(A, rowIndex+1, colmIndex);
         }
 
-        if (rowIndex < A.length - 1) {
-            sum = visitMatrix(A, rowIndex + 1, colmIndex, maxNum);
-        }
-        if (colmIndex < A.length - 1) {
 
-        }
+        changeA(rowIndex,colmIndex,A);
+
         return 0;
     }
 
