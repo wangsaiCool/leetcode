@@ -1,3 +1,5 @@
+package problems;
+
 public class P852_PeakIndexinAMountainArray {
     public int peakIndexInMountainArray(int[] A) {
         int index = 0;
