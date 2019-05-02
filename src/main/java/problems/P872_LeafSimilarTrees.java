@@ -1,6 +1,6 @@
-package problems;
+package Problems;
 
-import TreeNode.TreeNode;
+import myUtils.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,11 +8,11 @@ import java.util.List;
 /**
  * Created by WangSai on 3/16/19.
  * Definition for a binary tree node.
- * public class TreeNode {
+ * public class myUtils.TreeNode {
  * int val;
- * TreeNode left;
- * TreeNode right;
- * TreeNode(int x) { val = x; }
+ * myUtils.TreeNode left;
+ * myUtils.TreeNode right;
+ * myUtils.TreeNode(int x) { val = x; }
  * }
  */
 

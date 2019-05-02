@@ -1,4 +1,4 @@
-package problems;
+package Problems;
 
 /**
  * https://leetcode.com/problems/delete-columns-to-make-sorted/

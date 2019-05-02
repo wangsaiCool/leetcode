@@ -1,7 +1,4 @@
-package problems;
-
-import java.util.ArrayList;
-import java.util.List;
+package Problems;
 
 /**
  * Created by WangSai on 3/16/19.

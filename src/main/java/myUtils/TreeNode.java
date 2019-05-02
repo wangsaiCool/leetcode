@@ -1,4 +1,4 @@
-package TreeNode;
+package myUtils;
 
 /**
  * Created by WangSai on 3/16/19.

@@ -1,6 +1,6 @@
-package problems;
+package Problems;
 
-import TreeNode.TreeNode;
+import myUtils.TreeNode;
 
 /**
  * 题目链接：https://leetcode.com/problems/range-sum-of-bst/

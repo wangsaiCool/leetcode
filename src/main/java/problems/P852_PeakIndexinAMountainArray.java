@@ -1,4 +1,4 @@
-package problems;
+package Problems;
 
 public class P852_PeakIndexinAMountainArray {
     public int peakIndexInMountainArray(int[] A) {
