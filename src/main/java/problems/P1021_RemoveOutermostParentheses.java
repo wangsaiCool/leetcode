@@ -47,7 +47,27 @@ package Problems;
 
 public class P1021_RemoveOutermostParentheses {
     public String removeOuterParentheses(String S) {
-        return null;
+        StringBuilder result = new StringBuilder();
+        int count = 0;
+        if (S == null || S.length() == 0) {
+            return result.toString();
+        }
+        for (int index = 0; index < S.length(); index++) {
+            char content = S.charAt(index);
+            if (content == '(') {
+                count++;
+                if (count != 1) {
+                    result.append(content);
+                }
+            } else if (content == ')') {
+                count--;
+                if (count != 0) {
+                    result.append(content);
+
+                }
+            }
+        }
+        return result.toString();
     }
 
 }
