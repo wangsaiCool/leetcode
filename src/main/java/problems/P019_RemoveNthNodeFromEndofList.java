@@ -32,29 +32,38 @@ public class P019_RemoveNthNodeFromEndofList {
 
     //两个指针,遍历1遍
     public ListNode removeNthFromEnd1(ListNode head, int n) {
+        //只有一个节点
         if (head == null || head.next == null && n == 1) {
             return null;
         }
 
+        //删除头结点
         ListNode fastStep = head;
         ListNode slowStep = head;
-
-        while (fastStep.next != null && n-- >0) {
+        while (fastStep != null && n-- >0) {
             fastStep = fastStep.next;
 
         }
 
-        //检查链表长度
+        //链表长度不足n
         if (n>0){
             return null;
         }
 
+        //删除头结点
+        if (n == 0) {
+            return head.next;
+        }
+
+        //删除中间节点或者尾节点
         while (fastStep.next!=null){
             fastStep = fastStep.next;
             slowStep = slowStep.next;
         }
 
-        slowStep.next = fastStep;
+        slowStep.next = slowStep.next.next;
+
+
         return head;
 
     }
