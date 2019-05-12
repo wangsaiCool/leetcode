@@ -8,8 +8,8 @@ public class Node {
 
     public Node() {}
 
-    public Node(int _val,List<Node> _children) {
+    public Node(int _val,List<Node> children) {
         val = _val;
-        children = _children;
+        this.children = children;
     }
-};
+}
