@@ -10,7 +10,8 @@ package Problems;
 
 public class P561_ArrayPartitionI {
     public int arrayPairSum(int[] nums) {
-        nums = QSorted(nums);
+        //Arrays.sort(nums);
+        QSorted(nums);
         int ret = 0;
 
         for (int i = 0; i < nums.length; i = i + 2) {
