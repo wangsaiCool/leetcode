@@ -40,6 +40,7 @@ import java.util.Stack;
 
 public class P20_ValidParentheses {
 
+    //使用栈，压栈左括号
     public boolean isValid(String s) {
 
         Stack<Character> stack = new Stack<Character>();
@@ -67,4 +68,26 @@ public class P20_ValidParentheses {
         return stack.isEmpty();
     }
 
+    //使用转，压入右括号
+    public boolean isValid2(String str) {
+        Stack<Character> stack = new Stack<Character>();
+        for (char sub : str.toCharArray()) {
+            switch (sub) {
+                case '{':
+                    stack.push('}');
+                    break;
+                case '(':
+                    stack.push(')');
+                    break;
+                case '[':
+                    stack.push(']');
+                    break;
+                default:
+                    if (stack.isEmpty() || sub != stack.pop()) {
+                        return false;
+                    }
+            }
+        }
+        return stack.isEmpty();
+    }
 }
