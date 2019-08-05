@@ -1,6 +1,7 @@
 package Problems;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by WangSai on 2019-06-28 18:01
@@ -27,24 +28,74 @@ import java.util.HashMap;
 
 public class P242_ValidAnagram {
 
-    public boolean isAnagram(String s, String t) {
-        if (s == null || s.length() == 0 || t == null || t.length() == 0 || t.length() != s.length()) {
+    //map
+    public boolean isAnagram1(String s, String t) {
+        if (t == null || s == null || s.length() != t.length()) {
             return false;
         }
-        CountCharNum(s);
-        HashMap<Character, Integer> sMap = CountCharNum(s);
-        HashMap<Character, Integer> tMap = CountCharNum(t);
 
-    }
-
-    private HashMap<Character, Integer> CountCharNum(String s) {
         HashMap<Character, Integer> sMap = new HashMap<Character, Integer>();
+        HashMap<Character, Integer> tMap = new HashMap<Character, Integer>();
+
         for (int i = 0; i < s.length(); i++) {
-            if (sMap.containsKey(s.charAt(i))) {
-                sMap.put(s.charAt(i), sMap.get(s.charAt(i)) + 1);
+            char sKey = s.charAt(i);
+            if (sMap.containsKey(sKey)) {
+                sMap.put(sKey, sMap.get(sKey) + 1);
             } else {
-                sMap.put(s.charAt(i), 1);
+                sMap.put(sKey, 1);
+            }
+
+            char tKey = t.charAt(i);
+            if (tMap.containsKey(tKey)) {
+                tMap.put(tKey, tMap.get(tKey) + 1);
+            } else {
+                tMap.put(tKey, 1);
+            }
+
+        }
+
+        for (Map.Entry<Character, Integer> kv : sMap.entrySet()) {
+            Character sKey = kv.getKey();
+            Integer sValue = kv.getValue();
+
+            if (!tMap.containsKey(sKey)) {
+                return false;
+            } else {
+                int tValue = tMap.get(sKey);
+                if (sValue != tValue) {
+                    return false;
+                }
             }
         }
+
+        return true;
     }
+
+    //int[] arr
+    public boolean isAnagram2(String s, String t) {
+        if (s == null || t == null || s.length() != t.length()) {
+            return false;
+        }
+
+        int[] ss = new int[26];
+        int[] tt = new int[26];
+
+        for (int i = 0; i < s.length(); i++) {
+            char sSub = s.charAt(i);
+            char tSub = t.charAt(i);
+            ss[sSub - 'a']++;
+            tt[tSub - 'a']++;
+
+        }
+
+        for (int i = 0; i < ss.length; i++) {
+            if (ss[i] != tt[i]) {
+                return false;
+            }
+        }
+        return true;
+
+    }
+
+
 }
