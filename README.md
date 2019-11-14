@@ -1,7 +1,11 @@
 # LeetCode
-LeetCode题解-Java实现
+LeetCode - solve by Java.
 
-# 包说明
-数据结构:  ./src/main/java/myUtils 
+# comments 
+Data structure:  ./src/main/java/myUtils 
 
-算法实现:  ./src/main/java/problems
+Algorithm     :  ./src/main/java/problems
+
+# problems
+
+- P007_ReverseInteger, https://leetcode.com/problems/reverse-integer/
