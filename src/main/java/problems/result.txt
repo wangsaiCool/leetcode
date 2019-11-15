@@ -1,1 +1,0 @@
-  cat "$project_path/$name" | grep class | awk '{print $3}' && cat "$project_path/$name" | grep "http" > ./result.txt

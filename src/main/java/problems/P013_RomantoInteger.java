@@ -1,7 +1,5 @@
 package problems;
 
-import java.util.*;
-
 /**
  * Created by WangSai on 8/14/19
  *
@@ -29,7 +27,6 @@ import java.util.*;
  * Given a roman numeral, convert it to an integer. Input is guaranteed to be within the range from 1 to 3999.
  *
  * Example 1:
- *
  * Input: "III"
  * Output: 3
  * Example 2:
@@ -53,35 +50,51 @@ import java.util.*;
  */
 public class P013_RomantoInteger {
 
-    private static Map<Character, Integer> map;
-
-    static {
-        map = new HashMap<Character, Integer>();
-        map.put('I', 1);
-        map.put('V', 5);
-        map.put('X', 10);
-        map.put('L', 50);
-        map.put('C', 100);
-        map.put('D', 500);
-        map.put('M', 1000);
-    }
-
-    //单个罗马数字A是否大于B
-    private boolean isBigger(char A, char B) {
-        if (!map.containsKey(A) && !map.containsKey(B)) {
-            throw new IllegalArgumentException("Not Roman Number.");
-        }
-        return map.get(A) > map.get(B);
-    }
-
     public int romanToInt(String s) {
-       if (s == null|| s.length()==0){
-           return 0;
-       }
+        if (s == null || s.length() == 0) {
+            return 0;
+        }
 
-        char[] charArray = s.toCharArray();
-
-
+        char[] letters = s.toCharArray();
+        int result = 0;
+        for (int index = 0; index < letters.length; index++) {
+            //IVX,XLC,CDM
+            char roman = letters[index];
+            int num = convert(roman);
+            if (index + 1 < letters.length && num < convert(letters[index + 1])) {
+                result -= num;
+            } else {
+                result += num;
+            }
+        }
+        return result;
     }
 
+    private int convert(char roman) {
+        switch (roman) {
+            case 'I':
+                return 1;
+            case 'V':
+                return 5;
+            case 'L':
+                return 50;
+            case 'X':
+                return 10;
+            case 'C':
+                return 100;
+            case 'D':
+                return 500;
+            case 'M':
+                return 1000;
+            default:
+                return -1;
+
+        }
+    }
+
+    public static void main(String[] args) {
+        P013_RomantoInteger tool = new P013_RomantoInteger();
+        System.out.println(tool.romanToInt("IV"));
+
+    }
 }
