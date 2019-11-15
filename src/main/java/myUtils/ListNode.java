@@ -2,10 +2,10 @@ package myUtils;
 
 
 public class ListNode {
-    int val;
+    public int val;
     public ListNode next;
 
-    ListNode(int x) {
+    public ListNode(int x) {
         val = x;
     }
 }
