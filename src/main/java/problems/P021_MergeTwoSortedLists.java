@@ -13,9 +13,9 @@ public class P021_MergeTwoSortedLists {
     /**
      * Definition for singly-linked list.
      * public class ListNode {
-     *     int val;
-     *     ListNode next;
-     *     ListNode(int x) { val = x; }
+     * int val;
+     * ListNode next;
+     * ListNode(int x) { val = x; }
      * }
      */
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
@@ -30,7 +30,7 @@ public class P021_MergeTwoSortedLists {
         if (l1.val < l2.val) {
             head = l1;
             l1 = l1.next;
-        }else{
+        } else {
             head = l2;
             l2 = l2.next;
         }
@@ -40,7 +40,7 @@ public class P021_MergeTwoSortedLists {
             if (l1.val < l2.val) {
                 pre.next = l1;
                 l1 = l1.next;
-            }else{
+            } else {
                 pre.next = l2;
                 l2 = l2.next;
             }
@@ -62,6 +62,71 @@ public class P021_MergeTwoSortedLists {
         return head;
     }
 
+    public ListNode mergeTwoLists2(ListNode l1, ListNode l2) {
+        if (l1 == null) {
+            return l2;
+        }
+
+        if (l2 == null) {
+            return l1;
+        }
+        ListNode head = null;
+        ListNode pre = null;
+
+        while (l1 != null && l2 != null) {
+            if (l1.val < l2.val) {
+                if (pre == null) {
+                    head = new ListNode(l1.val);
+                    pre = head;
+                } else {
+                    pre.next = new ListNode(l1.val);
+                    pre = pre.next;
+                }
+                l1 = l1.next;
+            } else {
+                if (pre == null) {
+                    head = new ListNode(l2.val);
+                    pre = head;
+                } else {
+                    pre.next = new ListNode(l2.val);
+                    pre = pre.next;
+                }
+                l2 = l2.next;
+
+            }
+        }
+
+        while (l1 != null) {
+            pre.next = new ListNode(l1.val);
+            pre = pre.next;
+            l1 = l1.next;
+        }
+        while (l2 != null) {
+            pre.next = new ListNode(l2.val);
+            pre = pre.next;
+            l2 = l2.next;
+        }
+        return head;
+    }
+
+    public ListNode mergeTwoLists3(ListNode l1, ListNode l2) {
+        if (l1 == null) {
+            return l2;
+        }
+        if (l2 == null) {
+            return l1;
+        }
+
+        if (l1.val < l2.val) {
+            l1.next = mergeTwoLists3(l1.next, l2);
+            return l1;
+        } else {
+            l2.next = mergeTwoLists3(l1, l2.next);
+            return l2;
+        }
+
+    }
+
     public static void main(String[] args) {
         ListNode l1 = new ListNode(1);
         ListNode l2 = new ListNode(2);
@@ -78,7 +143,7 @@ public class P021_MergeTwoSortedLists {
         r11.next = r12;
 
         P021_MergeTwoSortedLists test = new P021_MergeTwoSortedLists();
-        ListNode ret = test.mergeTwoLists(l1, r10);
+        ListNode ret = test.mergeTwoLists2(l1, r10);
         while (ret != null) {
             System.out.println(ret.val);
             ret = ret.next;
