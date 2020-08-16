@@ -13,7 +13,6 @@ public class P1470_ShuffleTheArray {
             return nums;
         }
 
-
         for (int index = 0; index < nums.length / 2; index++) {
             result[index * 2] = nums[index];
             result[index * 2 + 1] = nums[index + n];
