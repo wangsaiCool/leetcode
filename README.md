@@ -67,4 +67,5 @@ Algorithm     :  ./src/main/java/problems
 | P944_DeleteColumnstoMakeSorted|https://leetcode.com/problems/delete-columns-to-make-sorted/|
 | P961_NRepeatedElementinSize2NArray|https://leetcode.com/problems/n-repeated-element-in-size-2n-array/submissions/|
 | P977_SquaresOfSortedArray| |
+| P1480_RunningSumof1DArray |https://leetcode.com/problems/running-sum-of-1d-array/ |
 
