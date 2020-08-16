@@ -68,4 +68,5 @@ Algorithm     :  ./src/main/java/problems
 | P961_NRepeatedElementinSize2NArray|https://leetcode.com/problems/n-repeated-element-in-size-2n-array/submissions/|
 | P977_SquaresOfSortedArray| |
 | P1480_RunningSumof1DArray |https://leetcode.com/problems/running-sum-of-1d-array/ |
+| P1470_ShuffletheArray |https://leetcode.com/problems/shuffle-the-array/|
 
