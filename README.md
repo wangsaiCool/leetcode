@@ -69,4 +69,5 @@ Algorithm     :  ./src/main/java/problems
 | P977_SquaresOfSortedArray| |
 | P1480_RunningSumof1DArray |https://leetcode.com/problems/running-sum-of-1d-array/ |
 | P1470_ShuffletheArray |https://leetcode.com/problems/shuffle-the-array/|
+| P1512_NumberofGoodPairs |https://leetcode.com/problems/number-of-good-pairs/|
 
