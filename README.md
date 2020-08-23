@@ -74,4 +74,5 @@ Algorithm     :  ./src/main/java/problems
 | P1436_DestinationCity |https://leetcode.com/problems/destination-city/submissions/|
 | P1528_ShuffleString |https://leetcode.com/problems/shuffle-string/|
 | P101_SymmetricTree |https://leetcode.com/problems/symmetric-tree/|
+| P387_FirstUniqueCharacterinaString |https://leetcode.com/problems/first-unique-character-in-a-string/|
 
