@@ -76,4 +76,5 @@ Algorithm     :  ./src/main/java/problems
 | P101_SymmetricTree |https://leetcode.com/problems/symmetric-tree/|
 | P387_FirstUniqueCharacterinaString |https://leetcode.com/problems/first-unique-character-in-a-string/|
 | P118_PascalsTriangle |https://leetcode.com/problems/pascals-triangle/|
+| P190_ReverseBits |https://leetcode.com/problems/reverse-bits/ 位移符号介绍https://zhuanlan.zhihu.com/p/30108890|
 
