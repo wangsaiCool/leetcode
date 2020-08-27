@@ -2,7 +2,7 @@
 LeetCode | solve by Java.
 
 # Comments
-Data structure:  ./src/main/java/myUtils
+Data structure:  ./src/main/java/myUtils  
 Algorithm     :  ./src/main/java/problems
 
 # problems
