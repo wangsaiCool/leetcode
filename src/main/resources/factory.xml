@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<config>
-    <loggerFactory>art.of.design.patterns.工厂模式.工厂方法模式.FileLoggerFactory</loggerFactory>
-</config>
