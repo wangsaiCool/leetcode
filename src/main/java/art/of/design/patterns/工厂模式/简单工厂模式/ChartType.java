@@ -1,6 +1,4 @@
-package art.of.design.patterns.factory.pattern.simple;
-
-import javax.crypto.spec.DESedeKeySpec;
+package art.of.design.patterns.工厂模式.简单工厂模式;
 
 /**
  * Created by WangSai on 2021/3/25

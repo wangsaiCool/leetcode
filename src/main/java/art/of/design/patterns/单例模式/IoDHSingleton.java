@@ -1,4 +1,4 @@
-package art.of.design.patterns.singleton;
+package art.of.design.patterns.单例模式;
 
 /**
  * Created by WangSai on 2021/3/25

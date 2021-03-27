@@ -1,4 +1,4 @@
-package art.of.design.patterns.factory.pattern.method;
+package art.of.design.patterns.工厂模式.工厂方法模式;
 
 import myUtils.XMLUtil;
 
