@@ -42,6 +42,12 @@
             <artifactId>json</artifactId>
             <version>20180130</version>
         </dependency>
+        <!--用于输出锁升级的信息-->
+        <dependency>
+            <groupId>org.openjdk.jol</groupId>
+            <artifactId>jol-core</artifactId>
+            <version>0.14</version>
+        </dependency>
     </dependencies>
 
 </project>
