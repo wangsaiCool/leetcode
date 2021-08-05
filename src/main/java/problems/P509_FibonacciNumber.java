@@ -1,4 +1,4 @@
-package Problems;
+package problems;
 
 /**
  * Created by WangSai on 2019-05-19 22:29

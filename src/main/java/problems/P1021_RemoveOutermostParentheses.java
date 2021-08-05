@@ -1,4 +1,4 @@
-package Problems;
+package problems;
 
 /**
  * 题目链接：https://leetcode.com/problems/remove-outermost-parentheses/

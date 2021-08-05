@@ -1,4 +1,4 @@
-package Problems;
+package problems;
 
 import myUtils.Node;
 import org.omg.PortableServer.LIFESPAN_POLICY_ID;
