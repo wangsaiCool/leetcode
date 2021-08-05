@@ -1,4 +1,4 @@
-package Problems;
+package problems;
 
 import myUtils.TreeNode;
 import java.util.Stack;
