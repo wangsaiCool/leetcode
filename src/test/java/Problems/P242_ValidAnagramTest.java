@@ -1,4 +1,4 @@
-package Problems;
+package problems;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
