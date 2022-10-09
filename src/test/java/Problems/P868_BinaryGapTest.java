@@ -13,7 +13,7 @@ public class P868_BinaryGapTest {
 
     @Test
     public void binaryGap() {
-        P868_BinaryGap t = new P868_BinaryGap();
-        System.out.println(t.binaryGap(8));
+//        P868_BinaryGap t = new P868_BinaryGap();
+//        System.out.println(t.binaryGap(8));
     }
 }
