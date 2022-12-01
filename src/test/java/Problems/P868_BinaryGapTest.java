@@ -1,4 +1,4 @@
-package Problems;
+package problems;
 
 import org.junit.Test;
 

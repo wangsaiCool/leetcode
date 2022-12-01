@@ -34,7 +34,7 @@ package problems;
  */
 
 
-public class P122_BestTimetoBuyandSellStockII {
+public class P122_BestTimetoBuyAndSellStockII {
     public int maxProfit(int[] prices) {
         int maxProfit = 0;
         for (int i = 0; i < prices.length-2; i++) {
