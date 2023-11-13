@@ -10,20 +10,24 @@ import java.util.UUID;
  * Created by WangSai on 2022/6/20
  */
 public class RandomFileGenerator {
-    private static final int ONE_MB = 1024 * 1024;
-    private static final String PATH = "/tmp/test_disk_java";
-    private static final String FILE_NAME_PREFIX = "test_java";
-    private static final String FILE_NAME_SUFFIX = ".java";
-    private static final int EXPECT_FILE_NAME_NUM_WIDTH = 5;
-    private static final int FILE_SIZE = 1 * ONE_MB;
+    private static final int ONE_KB = 1024;
+    private static final String PATH = "/tmp/test_jpeg";
+    private static final String FILE_NAME_PREFIX = "test_random_jpeg";
+    private static final String FILE_NAME_SUFFIX = ".jpeg";
+    private static final int EXPECT_FILE_NAME_NUM_WIDTH = 6;
+    private static final int FILE_SIZE = ONE_KB * ONE_KB;
 
     public static void main(String[] args) throws IOException {
-        int fileCnt = 500;
+        int fileCnt = 200;
         int fileNumStart = 0;
+        String  path1 = PATH;
         for (; fileNumStart < fileCnt; fileNumStart++) {
-            String fileName = makeFileName(PATH, FILE_NAME_PREFIX, fileNumStart, EXPECT_FILE_NAME_NUM_WIDTH, FILE_NAME_SUFFIX);
+            if (fileNumStart % 2 == 0) {
+                path1 = PATH + fileNumStart / 2;
+            }
+            String fileName = makeFileName(path1, FILE_NAME_PREFIX, fileNumStart, EXPECT_FILE_NAME_NUM_WIDTH, FILE_NAME_SUFFIX);
             long realSize = generateRandomFile(fileName, FILE_SIZE);
-            System.out.printf("success, fileName:{%s}, size:{%s}MB\n", fileName, realSize * 1.0 / ONE_MB);
+            System.out.printf("success, fileName:{%s}, size:{%s}KB\n", fileName, realSize * 1.0 / ONE_KB);
         }
     }
 

@@ -5,9 +5,17 @@ import java.sql.Timestamp;
  */
 public class testSqlUtilTimeStamp {
     public static void main(String[] args) {
-        long now = System.currentTimeMillis();
-        Timestamp ts = new Timestamp(now);
-        System.out.println(ts.toString());
 
+        long v = Long.parseLong("100_00");
+        System.out.println(v);
+    }
+
+    private static void printBits(int num) {
+        StringBuilder sb = new StringBuilder();
+        while (num != 0) {
+            sb.append(num & 0x01);
+            num >>>= 1;
+        }
+        System.out.println(sb.reverse().toString());
     }
 }
